@@ -1,0 +1,262 @@
+:root {
+  --tinta: #0d0c22;
+  --tinta-suave: #6e6d7a;
+  --fondo: #f3f3f4;
+  --borde: #e7e7e9;
+}
+
+/* Barra superior */
+.topbar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  height: 72px;
+  padding: 0 32px;
+  background: #ffffff;
+}
+
+.topbar__links {
+  display: flex;
+  gap: 28px;
+}
+
+.topbar__links a,
+.topbar__login {
+  color: var(--tinta);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.topbar__links a:hover,
+.topbar__login:hover {
+  color: var(--tinta-suave);
+}
+
+.topbar__brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 22px;
+}
+
+/* Botones en forma de píldora */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--tinta);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-pill:hover {
+  background: #2b2a45;
+  color: #ffffff;
+}
+
+.btn-pill:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Bloque principal oscuro */
+.hero {
+  padding: 88px 24px 96px;
+  text-align: center;
+  color: #ffffff;
+  background:
+    radial-gradient(60% 90% at 8% 25%, rgba(98, 64, 142, 0.55) 0%, transparent 62%),
+    radial-gradient(50% 75% at 92% 10%, rgba(22, 112, 120, 0.45) 0%, transparent 62%),
+    radial-gradient(70% 60% at 50% 125%, rgba(58, 40, 98, 0.5) 0%, transparent 62%),
+    #0a0a10;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero__title {
+  max-width: 660px;
+  margin: 28px auto 0;
+  font-size: clamp(32px, 5vw, 46px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1px;
+}
+
+.hero__text {
+  max-width: 640px;
+  margin: 18px auto 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Contenido */
+.content {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.toolbar__title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.toolbar__meta {
+  color: var(--tinta-suave);
+  font-size: 14px;
+}
+
+/* Tarjetas de personajes */
+.character-card {
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.character-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(13, 12, 34, 0.08);
+}
+
+.character-card .card-body {
+  padding: 24px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3a2a63, #12494f);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.character-card .card-title {
+  margin-bottom: 14px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.character-card .card-text {
+  margin: 0;
+  padding: 10px 0;
+  border-top: 1px solid var(--borde);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.character-card .card-text strong {
+  margin-right: 6px;
+  color: var(--tinta-suave);
+  font-weight: 500;
+  text-transform: none;
+}
+
+/* Lista simple (DataLoader) */
+.lista {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lista li {
+  padding: 18px 22px;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  background: #ffffff;
+  font-weight: 600;
+}
+
+/* Mensajes de estado */
+.estado {
+  padding: 44px 24px;
+  border: 1px dashed #cfcfd4;
+  border-radius: 20px;
+  background: #fafafa;
+  color: var(--tinta-suave);
+  text-align: center;
+}
+
+.estado--error {
+  border-color: #e3b4b4;
+  background: #fdf6f6;
+  color: #8c2f2f;
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  border: 2px solid #cfcfd4;
+  border-top-color: var(--tinta);
+  border-radius: 50%;
+  vertical-align: -3px;
+  animation: giro 0.8s linear infinite;
+}
+
+@keyframes giro {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    grid-template-columns: 1fr auto;
+    padding: 0 16px;
+  }
+
+  .topbar__links,
+  .topbar__login {
+    display: none;
+  }
+
+  .hero {
+    padding: 56px 20px 64px;
+  }
+}
